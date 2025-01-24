@@ -15,7 +15,6 @@ for problem description and requirements.
 We were using [NVIDIA RTX 4090D](https://www.nvidia.cn/geforce/graphics-cards/40-series/rtx-4090-d/) _*3_
 GPU to accelerate the computation of the model.
 
-
 ## Open Source Licence
 
 The source code of this project adopts the [GNU General Public License v3.0](https://opensource.org/licenses/GPL-3.0).
