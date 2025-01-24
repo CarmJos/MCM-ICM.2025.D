@@ -101,28 +101,28 @@ ___
 
 **如何处理数据的决策和假设是建模过程中的重要部分。** 此外，**团队在解题时并不局限于只使用这些数据**。
 
-`2025_Problem_D_Data.zip` 这个压缩文件包含以下9个数据文件 (已置于 [`data/`](../../data))：  
-1. **Bus_Routes.csv**[[5]](https://data.baltimorecity.gov/datasets/d17c836e96324823b989378735b52249_0/about):  
-   该数据集提供了2022年巴尔的摩市MTA公交路线的位置。
-2. **Bus_Stops.csv**[[6]](https://data.baltimorecity.gov/datasets/baltimore::bus-stops/explore?location=39.285971%2C-76.620462%2C10.70):  
-   该数据集提供了2022年巴尔的摩市MTA公交站的位置。
-3. **nodes_all.csv**[7]:  
-   该数据集包含了OpenStreetMaps[[8]](https://geoffboeing.com/publications/osmnx-paper/)标记的地理位置数据，
-   代表了巴尔的摩的交通节点。通常，这些节点位于两条交通路径（如道路、自行车道、人行道等）交叉的地方。
-4. **nodes_drive.csv**[7]:  
-   该数据集包含了OpenStreetMaps[[8]](https://geoffboeing.com/publications/osmnx-paper/)标记的汽车行驶路径的地理节点。
-   通常，这些节点位于两条道路或高速公路交叉的地方。
-5. **edges_all.csv**[7]:  
-   该数据集提供了`nodes_all.csv`中两个节点之间的交通路径信息。
-6. **edges_drive.csv**[7]:  
-   该数据集提供了`nodes_drive.csv`中两个节点之间的道路路径信息。
-7. **MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore.csv**[[9]](https://data.imap.maryland.gov/datasets/maryland::mdot-sha-annual-average-daily-traffic-aadt-locations/explore):  
-   该数据集包含马里兰州道路的年度日均交通量（AADT）数据，涵盖了线性和点状地理特征，提供了交通流量的详细信息。
-   这些数据通过交通计数得出，计算出年日均交通量（AADT）和年工作日交通量（AAWDT）等。
-8. **Edge_Names_With_Nodes.csv**[7]:  
-   该数据集将`nodes_all.csv`中的地理节点与`edges_all.csv`中的街道路径名称关联起来，提供带有节点信息的街道名称。
-9. **DataDictionary.csv**:  
-   该数据集描述了为该问题提供的每个数据集的特征。
+`2025_Problem_D_Data.zip` 这个压缩文件包含以下9个数据文件 (已置于 [`data/`](../../data))
+1. **Bus_Routes.csv** [[5]](https://data.baltimorecity.gov/datasets/d17c836e96324823b989378735b52249_0/about) 
+   - 该数据集提供了2022年巴尔的摩市MTA公交路线的位置。
+2. **Bus_Stops.csv** [[6]](https://data.baltimorecity.gov/datasets/baltimore::bus-stops/explore?location=39.285971%2C-76.620462%2C10.70)
+   - 该数据集提供了2022年巴尔的摩市MTA公交站的位置。
+3. **nodes_all.csv** [[7]](https://geoffboeing.com/publications/osmnx-paper/)
+   - 该数据集包含了OpenStreetMaps[[8]](https://geoffboeing.com/publications/osmnx-paper/)标记的地理位置数据，代表了巴尔的摩的交通节点。
+   - 通常，这些节点位于两条交通路径（如道路、自行车道、人行道等）交叉的地方。
+4. **nodes_drive.csv**[[7]](https://geoffboeing.com/publications/osmnx-paper/)
+   - 该数据集包含了OpenStreetMaps[[8]](https://geoffboeing.com/publications/osmnx-paper/)标记的汽车行驶路径的地理节点。
+   - 通常，这些节点位于两条道路或高速公路交叉的地方。
+5. **edges_all.csv** [[7]](https://geoffboeing.com/publications/osmnx-paper/)
+   - 该数据集提供了`nodes_all.csv`中两个节点之间的交通路径信息。
+6. **edges_drive.csv** [[7]](https://geoffboeing.com/publications/osmnx-paper/)
+   - 该数据集提供了`nodes_drive.csv`中两个节点之间的道路路径信息。
+7. **MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore.csv** [[9]](https://data.imap.maryland.gov/datasets/maryland::mdot-sha-annual-average-daily-traffic-aadt-locations/explore) 
+   - 该数据集包含马里兰州道路的年度日均交通量（AADT）数据，涵盖了线性和点状地理特征，提供了交通流量的详细信息。
+   - 这些数据通过交通计数得出，计算出年日均交通量（AADT）和年工作日交通量（AAWDT）等。
+8. **Edge_Names_With_Nodes.csv** [[7]](https://geoffboeing.com/publications/osmnx-paper/)
+   - 该数据集将`nodes_all.csv`中的地理节点与`edges_all.csv`中的街道路径名称关联起来，提供带有节点信息的街道名称。
+9. **DataDictionary.csv**
+   - 该数据集描述了为该问题提供的每个数据集的特征。
 
 与此同时，还可在以下网站找到更多有价值的数据集：  
 - https://baltometro.org/about-us/data-maps/regional-gis-data-center
