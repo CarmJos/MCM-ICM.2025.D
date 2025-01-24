@@ -22,9 +22,9 @@ The source code of this project adopts the [GNU General Public License v3.0](htt
 
 ## Supports
 
-Many thanks to our advisor (Mr. Han) for his well guidance and support.
+Many thanks to **our advisor (Mr. Han)** for his well guidance and support.
 
-Many thanks to Jetbrains for kindly providing a license for us to work on this and other open-source projects.  
+Many thanks to **Jetbrains** for kindly providing a license for us to work on this and other open-source projects.  
 ![](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)
 
 
