@@ -3,7 +3,7 @@ target/
 
 *.iws
 .idea_modules/
-.idea
+.idea/
 *.iml
 out
 gen
