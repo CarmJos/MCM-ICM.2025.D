@@ -80,7 +80,7 @@ Be sure to highlight the impacts on the various stakeholders in and around Balti
     - How does your project impact other stakeholders?
     - Explain the ways that your project disrupts other transportation needs and people’s lives.
 
-## Share Your Insights
+### Share Your Insights
 
 - **Safety** is a significant issue facing the City of Baltimore. How can the transportation system be used to best address this issue?
 - Write a **one-page memo** to the Mayor of Baltimore describing two of your projects, including the benefits and drawbacks 
