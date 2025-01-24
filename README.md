@@ -1,5 +1,7 @@
 # **MCM/ICM** _(2025)_ Problem D: A Roadmap to a Better City
 
+<img align="right" height=30% width=30% src=".doc/problem/img.png"  alt="banner"/>
+
 This project is a solution to the 2025 ICM Problem D using [Python]() and [LaTex](), with the following sections:
 1. introduction of the problem
 2. the mathematical model, 
