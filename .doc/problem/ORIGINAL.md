@@ -124,16 +124,33 @@ manipulate the data are an important part of the modeling process. Moreover, tea
 limited to these data.
 
 `2025_Problem_D_Data.zip` This zip file contains all 9 of the data files listed below:
-1. **Bus_Routes.csv**: Locations of MTA bus routes. [[5]](https://data.baltimorecity.gov/datasets/d17c836e96324823b989378735b52249_0/about)
-2. **Bus_Stops.csv**: Locations of MTA bus stops. [[6]](https://data.baltimorecity.gov/datasets/baltimore::bus-stops/explore?location=39.285971%2C-76.620462%2C10.70)
-3. **nodes_all.csv**: Geographic nodes for transportation paths. [[7]](https://geoffboeing.com/publications/osmnx-paper/)
-4. **nodes_drive.csv**: Geographic nodes for car travel paths.
-5. **edges_all.csv**: Paths between nodes from `nodes_all.csv`.
-6. **edges_drive.csv**: Roadways between nodes from `nodes_drive.csv`.
-7. **MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore.csv**: Traffic volume data. [[9]](https://data.imap.maryland.gov/datasets/maryland::mdot-sha-annual-average-daily-traffic-aadt-locations/explore)
+1. **Bus_Routes.csv**[[5]](https://data.baltimorecity.gov/datasets/d17c836e96324823b989378735b52249_0/about):
+This dataset represents the locations of MTA bus routes within the City of Baltimore as of 2022. 
+2. **Bus_Stops.csv**[[6]](https://data.baltimorecity.gov/datasets/baltimore::bus-stops/explore?location=39.285971%2C-76.620462%2C10.70): 
+This dataset represents the locations of MTA Bus Stops as of 2022 within the City of Baltimore.
+3. **nodes_all.csv**[7]: 
+This dataset represents the locations of tagged geographic attributes by OpenStreetMaps 
+[[8]](https://geoffboeing.com/publications/osmnx-paper/) that provide transportation data 
+points in Baltimore. Generally, these are locations where two transportation paths 
+(road, highway, bikeway, walkway, etc.) intersect.
+4. **nodes_drive.csv**[7]: This dataset represents the locations of tagged geographic attributes by OpenStreetMaps 
+[[8]](https://geoffboeing.com/publications/osmnx-paper/) for car travel. Generally, 
+these are locations where two roads or highways intersect.
+5. **edges_all.csv**[7]: This dataset represents the transportation paths between two nodes from the `nodes_all.csv` dataset.
+6. **edges_drive.csv**[7]: This dataset represents the roadways between two nodes from the `nodes_drive.csv` dataset.
+7. **MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore.csv**[[9]](https://data.imap.maryland.gov/datasets/maryland::mdot-sha-annual-average-daily-traffic-aadt-locations/explore): 
+MDOT SHA Annual Average Daily Traffic (AADT) data consists of linear & point geometric features 
+which represent the geographic locations & segments of roadway throughout the State of Maryland 
+that include traffic volume information. Traffic volume information is produced from traffic counts 
+used to calculate annual average daily traffic (AADT), annual average weekday traffic (AAWDT), 
+AADT based on vehicle class (current year only) for roadways throughout the State. 
+8. **Edge_Names_With_Nodes.csv**[7]: This dataset pairs the information from the `nodes_all.csv` dataset 
+with information from the `edges_all.csv` dataset to provide street names with nodes.
+9. **DataDictionary.csv**: This data file describes the features in each of the data sets provided for this question.
 
-There are many valuable data sets available at: https://baltometro.org/about-us/data-maps/regional-gis-data-center 
-and https://opendata.baltimorecountymd.gov/ .
+There are many valuable data sets available at:
+1. https://baltometro.org/about-us/data-maps/regional-gis-data-center 
+2. https://opendata.baltimorecountymd.gov/
 
 ## Glossary
 - **Passthrough**: A place that travelers have to go through to get to their destinations. 
