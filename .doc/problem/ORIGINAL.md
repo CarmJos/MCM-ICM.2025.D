@@ -85,6 +85,7 @@ Be sure to highlight the impacts on the various stakeholders in and around Balti
 - **Safety** is a significant issue facing the City of Baltimore. How can the transportation system be used to best address this issue?
 - Write a **one-page memo** to the Mayor of Baltimore describing two of your projects, including the benefits and drawbacks 
   on the people and their safety in the city.
+___
 
 Your PDF solution of no more than 25 total pages should include: 
 - One-page Summary Sheet. 

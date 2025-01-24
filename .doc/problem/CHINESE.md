@@ -49,7 +49,7 @@
 你们团队的任务是通过**推荐改进方案**，改善巴尔的摩市民的生活，并提升巴尔的摩的交通网络。
 
 > [!TIP]
-> 一份包含**街道段**的车辆流量数据文件已提供。  
+> 一份包含 **街道段** 的车辆流量数据文件已提供，见 [提供的文件](#数据文件) 。
 
 为巴尔的摩或其某个区域和社区创建交通网络将帮助你们更好地可视化和理解相关问题。
 因此，你们应为巴尔的摩交通系统的某部分或元素构建一个网络模型。
@@ -65,6 +65,55 @@
     - 该项目对居民的好处是什么？  
     - 该项目如何影响其他利益相关者？  
     - 解释该项目如何干扰其他交通需求及人们的生活。
+
+## 额外见解
+- **安全性**是巴尔的摩市面临的一个重大问题。如何通过交通系统来有效地解决这一问题？  
+- 撰写一份**一页纸的备忘录**，向巴尔的摩市市长介绍你们的两个项目，并说明这些项目对城市居民安全的益处和潜在风险。
+
+___
+
+## 提交要求
+你的PDF解决方案总页数不超过25页，应包括：  
+- 一页的总结页面。  
+- 目录。  
+- 完整的解决方案。  
+- 一页的备忘录。  
+- 参考文献列表。  
+- AI使用报告（如果有使用，且不计入25页的页数限制）。
+
+> [!注意]  
+> 完整的ICM提交没有特定的最低页数要求。你可以使用最多25页来呈现你的解决方案和其他任何附加信息（例如：图纸、图表、计算、表格）。也可以提交部分解决方案。  
+> 我们允许谨慎使用AI工具，如ChatGPT，尽管这不是解决问题的必需方法。如果你选择使用生成性AI，
+> 你必须遵循[COMAP AI使用政策](https://www.contest.comap.com/undergraduate/contests/mcm/flyer/Contest_AI_Policy.pdf)。  
+> 这将导致附加的AI使用报告，该报告必须添加到你的PDF解决方案文件的末尾，并且不计入解决方案的25页总页数限制。
+
+### 新MCM/ICM：[在线提交流程](https://www.contest.comap.com/undergraduate/contests/mcm/flyer/MCM-ICM_SubProcess.pdf)  
+本文旨在帮助和指导参加MCM/ICM的学生和导师。  
+
+在文章中，COMAP提供了关于新在线提交流程的信息，使用新的在线提交页面 https://forms.comap.org/241335097294056 进行提交。
+
+你需要你的团队控制编号、导师ID号和问题选择来完成提交。
+
+## 数据文件
+
+这些文件旨在帮助学生找到与 **巴尔的摩** 相关的数据，特别是为建立网络模型以研究这些问题提供帮助。  
+但是，像已提供的数据集中包含的这些真实数据通常**非常杂乱**。
+例如，巴尔的摩的许多道路不仅有一个标识它们的路线编号，还有一个可能在不同路段之间变化的街道名称。因此，数据将需要进行处理。
+
+**如何处理数据的决策和假设是建模过程中的重要部分。** 此外，**团队在解题时并不局限于只使用这些数据**。
+
+`2025_Problem_D_Data.zip` 这个压缩文件包含以下9个数据文件 (已置于 [`data/`](../../data))：  
+1. **Bus_Routes.csv**: MTA公交路线的位置。 [[5]](https://data.baltimorecity.gov/datasets/d17c836e96324823b989378735b52249_0/about)  
+2. **Bus_Stops.csv**: MTA公交站的位置。 [[6]](https://data.baltimorecity.gov/datasets/baltimore::bus-stops/explore?location=39.285971%2C-76.620462%2C10.70)  
+3. **nodes_all.csv**: 交通路径的地理节点。 [[7]](https://geoffboeing.com/publications/osmnx-paper/)  
+4. **nodes_drive.csv**: 汽车行驶路径的地理节点。  
+5. **edges_all.csv**: 来自`nodes_all.csv`的节点之间的路径。  
+6. **edges_drive.csv**: 来自`nodes_drive.csv`的节点之间的道路。  
+7. **MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore.csv**: 交通流量数据。 [[9]](https://data.imap.maryland.gov/datasets/maryland::mdot-sha-annual-average-daily-traffic-aadt-locations/explore)
+
+与此同时，还可在以下网站找到更多有价值的数据集：  
+- https://baltometro.org/about-us/data-maps/regional-gis-data-center
+- https://opendata.baltimorecountymd.gov/
 
 ## 术语参考
 
