@@ -12,6 +12,9 @@ for problem description and requirements.
 
 ## Thinking & Analysis
 
+We were using [NVIDIA RTX 4090D](https://www.nvidia.cn/geforce/graphics-cards/40-series/rtx-4090-d/) _*3_
+GPU to accelerate the computation of the model.
+
 
 ## Open Source Licence
 
