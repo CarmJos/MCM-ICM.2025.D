@@ -1,6 +1,7 @@
 | ©2025 by COMAP, Inc. | [www.comap.org](http://www.comap.org) | [www.mathmodels.org](http://www.mathmodels.org) | info@comap.org |
 |----------------------|---------------------------------------|-------------------------------------------------|----------------|
 
+![img.png](img.png)
 # 2025 ICM Problem D: A Roadmap to a Better City
 
 ## Background
@@ -139,9 +140,6 @@ and https://opendata.baltimorecountymd.gov/ .
 or goods.
 - **Street segments**: virtual edges in a dataset or map of locations of parts (usually with a start point 
 and end point) of a street or road.
-
-
-## References
 
 ## References
 

@@ -1,0 +1,110 @@
+| ©2025 by COMAP, Inc. | [www.comap.org](http://www.comap.org) | [www.mathmodels.org](http://www.mathmodels.org) | info@comap.org |
+|----------------------|---------------------------------------|-------------------------------------------------|----------------|
+
+> 本文翻译自[原文](ORIGINAL.md)，仅供参考。原文版权归COMAP公司所有，转载请注明出处。
+
+![img.png](img.png)
+
+# 2025 ICM (问题D): 通往更美好城市的路线图
+
+## 问题背景
+
+**交通系统既能推动城市的发展，也可能给居民的生活带来困扰。**
+
+一套高效的交通**基础设施**能吸引企业、学校、游客及新居民的到来。然而，城市所面临的交通问题是复杂且紧密相连的。
+不同的利益相关者（如城市居民、商户、郊区居民、通勤者、**过境**旅客、游客等）在交通系统中的需求和优先级各不相同。
+而通常在交通系统中的某些环节会选择先满足某一方的需求，但也同时妨碍、影响了其他人的需求。
+
+> 例如在高速公路、公交路线和铁路系统可能会干扰到城市的骑行者和行人，反过来，当机动车在城市人行道或信号灯前遭遇延误时，也会对交通流畅性造成影响。
+
+有时候，城市地理环境本身也可能成为交通流畅的最大障碍——例如水域（如河流、港口、溪流和排水沟）或地形（如丘陵、沟渠、山谷、斜坡）。
+甚至土壤的构成和天气条件也可能成为干扰因素。
+
+## 情景描述
+
+**美国马里兰州** 的 **巴尔的摩** 市正面临着老化基础设施和有限的交通选择，这些问题影响着市民的生活并妨碍了其经济增长。
+此外，最近一座主要桥梁（弗朗西斯·斯科特·基桥）倒塌，关闭了通往繁忙港口的主要高速公路。
+巴尔的摩市正计划通过基础设施改善和公共交通增强来提升其交通网络，以支持其可持续发展目标。
+这些目标基于识别、优先排序和实施多项举措，如利益相关者之间的合作、维护或更新其物理系统、更有效地利用数据，以及寻求能够提升市民和游客生活质量的技术进步。
+
+**巴尔的摩** 是一个繁忙的港口和航运中心，且位于主要州际高速公路（I-95）沿线。
+市内多个过境和通勤高速公路及铁路线路阻碍或干扰了街道和社区的交通，使得城市居民难以进入航运行业的工作机会，且本地商户在运输货物进出和周边社区时也受到影响。
+巴尔的摩通过修复道路、建设绕行道路、扩展公共交通选项并改善港口和机场的通行条件等规划，期望促进商业活动，使城市成为一个更适宜居住、工作和访问的地方。
+
+最近，借助全国性资金和支持，美国的多个城市已提出基础设施计划，旨在拆除分隔社区与市中心的高速公路，并以重新连接和振兴这些区域的方式替代它们。
+虽然这些高速公路方便郊区居民往返市中心或城市内的工作地点，但在这些高速公路的建设过程中，城市社区被分割或摧毁。
+巴尔的摩希望能够重新连接这些社区，提供更多可持续的社区，包括更多绿地、更好的公共住房以及社区娱乐和休闲的机会。
+
+以下是四个交通问题的例子，详细说明了这些问题：
+1. **重新修建倒塌的港口桥梁**（弗朗西斯·斯科特·基桥）。[[1]](https://www.constructconnect.com/construction-economic-news/rebuild-of-baltimores-key-bridge-to-start)  
+2. **公共铁路系统的不足**（MARC、轻轨、重轨），这些系统连接着已经拥有多种交通选择的郊区。
+   这些铁路系统无法充分支持通勤者和居民便捷地利用系统前往工作地点，而市区的免费公交主要为游客服务，而非市区居民。[[2]](https://www.scirp.org/journal/paperinformation?paperid=138654)  
+3. 通过西巴尔的摩联合项目（West Baltimore United Project）**规划修复美国40号公路**（“通向无处的高速公路”）几十年来对城市社区造成的破坏。[[3]](https://streetsofbaltimore.com/reconnecting-communities-in-west-baltimore)  
+4. 一位来自布鲁克林（巴尔的摩的一个社区）**居民的亲身经历**，描述了他在市区参加完足球赛后尝试乘坐公交回家的艰难历程。[[4]](https://www.scirp.org/journal/paperinformation?paperid=138654)
+
+
+## 任务需求
+
+巴尔的摩的所有交通规划都涉及多个利益关系，而这些利益相关者均有着不同的观点。
+你们团队的任务是通过**推荐改进方案**，改善巴尔的摩市民的生活，并提升巴尔的摩的交通网络。
+
+> [!TIP]
+> 一份包含**街道段**的车辆流量数据文件已提供。  
+
+为巴尔的摩或其某个区域和社区创建交通网络将帮助你们更好地可视化和理解相关问题。
+因此，你们应为巴尔的摩交通系统的某部分或元素构建一个网络模型。
+
+利用你们的模型，考虑并解决以下相关的交通问题：  
+1. 弗朗西斯·斯科特·基桥的倒塌对巴尔的摩的交通系统产生了重大影响。  
+   - 你们的网络模型显示了桥梁倒塌和/或桥梁重建的影响是什么？  
+   - 请务必突出显示该事件对巴尔的摩及周边地区各个利益相关者的影响。  
+2. 许多巴尔的摩市的居民选择步行或乘公交出行。选择一个影响公交或人行道系统的项目或潜在项目。  
+   - 你们的网络模型显示了该项目的影响是什么？  
+   - 请务必突出显示该项目对巴尔的摩及周边地区各个利益相关者的影响。  
+3. 推荐一个最能改善巴尔的摩市民生活的交通网络项目。  
+    - 该项目对居民的好处是什么？  
+    - 该项目如何影响其他利益相关者？  
+    - 解释该项目如何干扰其他交通需求及人们的生活。
+
+## 术语参考
+
+- **过境点**: 旅行者为了到达目的地必须经过的地方。  
+- **基础设施**: 用于支持或进行人员或货物运输的结构或设施。  
+- **街道段**: 数据集或地图中表示街道或道路部分（通常具有起点和终点）的虚拟边缘。
+
+## 参考文献
+
+1. Rebuild of Baltimore’s Key Bridge to start ConstructConnect. 
+*Rebuild of Baltimore's key bridge to start.* ConstructConnect. 2024 Jan 18. 
+Available from: [https://www.constructconnect.com/construction-economic-news/rebuild-of-baltimores-key-bridge-to-start](https://www.constructconnect.com/construction-economic-news/rebuild-of-baltimores-key-bridge-to-start)
+
+2. Reconnecting communities in West Baltimore SCIRP.
+*Reconnecting communities in West Baltimore.* SCIRP. 2023 Dec 10. 
+Available from: [https://www.scirp.org/journal/paperinformation?paperid=138654](https://www.scirp.org/journal/paperinformation?paperid=138654)
+
+3. Reconnecting communities in West Baltimore Streets of Baltimore.
+*Reconnecting communities in West Baltimore.* Streets of Baltimore. 2024 Jan 15.
+Available from: [https://streetsofbaltimore.com/reconnecting-communities-in-west-baltimore](https://streetsofbaltimore.com/reconnecting-communities-in-west-baltimore)
+
+4. Transportation equity problems in Baltimore WYPR.
+*With the national spotlight on Baltimore, transportation equity problems shine through.* WYPR. 2024 Feb 26.
+
+5. City of Baltimore. *Baltimore Transit Data: Bus Routes* [Internet]. 
+Baltimore, MD: City of Baltimore; 2025 [cited 2025 Jan 7]. 
+Available from: [https://data.baltimorecity.gov/datasets/d17c836e96324823b989378735b52249_0/about](https://data.baltimorecity.gov/datasets/d17c836e96324823b989378735b52249_0/about)
+
+6. City of Baltimore. *Baltimore Transit Data: Bus Stops* [Internet]. 
+Baltimore, MD: City of Baltimore; 2025 [cited 2025 Jan 7]. 
+Available from: [https://data.baltimorecity.gov/datasets/baltimore::bus-stops/explore?location=39.285971%2C-76.620462%2C10.70](https://data.baltimorecity.gov/datasets/baltimore::bus-stops/explore?location=39.285971%2C-76.620462%2C10.70)
+
+7. Boeing, G. 2024. *Modeling and Analyzing Urban Networks and Amenities with OSMnx.* 
+Working paper. URL: [https://geoffboeing.com/publications/osmnx-paper/](https://geoffboeing.com/publications/osmnx-paper/)
+
+8. OpenStreetMap contributors. *OpenStreetMap* [Internet].
+[place of publication unknown]: OpenStreetMap Foundation; 2025 [cited 2025 Jan 10].
+
+9. Maryland Department of Transportation. *MDOT SHA Annual Average Daily Traffic (AADT) Locations* [Internet].
+Baltimore, MD: Maryland Department of Transportation; 2025 [cited 2025 Jan 10]. Available from: [https://data.imap.maryland.gov/datasets/maryland::mdot-sha-annual-average-daily-traffic-aadt-locations/explore](https://data.imap.maryland.gov/datasets/maryland::mdot-sha-annual-average-daily-traffic-aadt-locations/explore)
+
+
+
