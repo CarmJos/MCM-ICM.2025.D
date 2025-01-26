@@ -16,85 +16,123 @@
 将关键点例如道路交叉口，公交站等地方添加标志。
 Python实际建议考虑使用GeoPandas库，将图设计为networkx使用QGIS进行可视化。
 
-### 数据理解
+### 数据解释
 
-根据您提供的数据字典，以下是各个数据字段的中文解释和我对数据关系的简要理解：
+#### **1. Bus_Routes（公交路线表）**
+- **Route_Name**: 公交路线名称，如“BALTIMORE - ANNAPOLIS”。
+- **Route_Type**: 公交服务类型（如通勤巴士、快速公交等）。
+- **Route_Numb**: 路线编号（如“Route 22”）。
+- **Distributi**: 客流量分布标签（内部使用）。
+- **Shape__Length**: GIS中路线长度（内部单位）。
 
-#### 公交路线相关数据 Bus_Routes
-- **Route_Name**: 公共交通路线的名称，例如公交或轨道路线。
-- **Route_Type**: 路线所代表的公共交通服务类型，如公交车、快线、城市线等。
-- **Route_Numb**: 路线的编号。
-- **Distributi**: 可能指代客流量或交通数据的分布情况，如高峰时段与非高峰时段的对比。
-- **Shape__Length**: 路线的长度，单位为GIS内部使用单位（如米）。
+#### **2. Bus_Stops（公交站点表）**
+- **Y/X**: 站点经纬度坐标。
+- **stop_name**: 站点名称（含街道和方向信息）。
+- **Rider_On/Off/Total/Stop_Rider**: 上下车乘客数及总计。
+- **Routes_Ser**: 站点服务的公交路线列表。
+- **Distributi**: 客流量分布标签（内部使用）。
+- **Mode**: 交通模式（如“Bus”）。
+- **Shelter**: 是否有候车亭（yes/no）。
+- **County**: 站点所属县。
+- **stop_id**: 站点唯一标识符。
 
-#### 公交站点数据 Bus_Stops
-- **Y**: 站点的纬度坐标，用于地理定位。
-- **X**: 站点的经度坐标，用于地理定位。
-- **stop_name**: 站点的名称，可能包含街道方向信息。
-- **Rider_On**: 在特定时间段内，上车的乘客数量。
-- **Rider_Off**: 在特定时间段内，下车的乘客数量。
-- **Rider_Tota**: 上车与下车乘客的总和。
-- **Stop_Rider**: 站点的总乘客数（可能为Rider_On或Rider_Off的和）。
-- **Routes_Ser**: 服务于该站点的交通路线，如公交、轨道等。
-- **Mode**: 使用的交通方式，如公交、通勤公交等。
-- **Shelter**: 是否有候车棚等设施。
-- **County**: 该站点所在的县名。
+#### **3. nodes_all & nodes_drive（节点表）**
+- **osmid**: OSM节点唯一ID。
+- **y/x**: 节点经纬度。
+- **street_count**: 连接道路数（反映交叉口复杂度）。
+- **highway**: 道路类型（如residential、motorway）。
+- **ref**: 道路编号（如“I-80”）。
+- **railway/junction**: 铁路或交叉口类型。
+- **geometry**: 空间几何信息（点）。
 
-#### 路网节点与边数据 nodes_all & nodes_drive
-- **osmid**: 每个节点在OpenStreetMap中的唯一标识符。
-- **y, x**: 节点的纬度与经度坐标。
-- **street_count**: 一个节点与多少条道路相连，表示交叉口数量。
-- **highway**: 道路类型，如住宅区道路、主干道等。
-- **ref**: 道路的参考编号，如高速公路编号。
-- **junction**: 该节点是否为交汇点，及其类型（如环形交叉口）。
-- **geometry**: 节点或路段的空间表示，通常为线段或点。
-  
-#### 路网边数据 edges_all & edges_drive
-- **u, v**: 图中边的起始节点和终止节点的OSM ID。
-- **key**: 区分两个相同节点之间不同道路的唯一标识符。
-- **osmid**: 路段的唯一标识符。
-- **bridge**: 是否为桥梁。
-- **lanes**: 路段的车道数。
-- **maxspeed**: 路段的最大限速。
-- **oneway**: 是否为单行道。
-- **length**: 路段的长度，单位通常为米。
-- **tunnel**: 是否为隧道。
-  
-#### 交通流量相关数据 MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore
-- **AADT (Annual Average Daily Traffic)**: 年度平均日交通量，表示某地点每天的平均交通量。
-- **AAWDT (Annual Average Weekday Traffic)**: 年度平均工作日交通量，表示工作日的平均交通量。
-- **Traffic Count Details**: 各年份的AADT、AAWDT等具体流量数据。
+#### **4. edges_all & edges_drive（道路边表）**
+- **u/v**: 边的起点/终点节点ID。
+- **key**: 区分同一节点间多条边的标识。
+- **osmid**: OSM边唯一ID。
+- **bridge/tunnel**: 是否为桥梁/隧道。
+- **highway**: 道路类型（与节点表一致）。
+- **lanes/maxspeed/oneway**: 车道数、限速、单双向。
+- **length**: 路段长度（米）。
+- **geometry**: 空间几何信息（线）。
+- **name/service/access**: 道路名称、服务类型、访问权限。
 
-### 数据关系的理解
-- **公交路线与公交站点**: 每个公交路线都有多个停靠的站点，每个站点服务不同的公交路线，可以通过“Routes_Ser”字段链接公交站点与其服务的公交路线。
-- **站点乘客数据**: 通过“Rider_On”和“Rider_Off”字段，可以分析每个站点在特定时段的上下车人数，进而反映该站点的客流密度和出行模式。
-- **路网与交通流量**: 每个道路节点（如“osmid”）与道路边（如“u, v”）构成了一个图模型，代表了路网的结构。节点连接的道路决定了交通流向和可能的瓶颈。而交通流量数据（如AADT）可以帮助评估路段的交通压力和优化方向。
-- **高峰流量分析**: 交通流量数据（如“Peak Hour Direction”）可以用于分析不同时间段的流量变化，为交通网络优化提供依据。
+#### **5. MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore（交通流量表）**
+- **node start/end**: 路段起止节点ID。
+- **GIS Object ID**: 地理对象唯一ID。
+- **Station ID/County Code**: 交通监测站信息。
+- **Road Name/Route Number**: 道路名称与编号。
+- **Functional Class**: 道路功能分类（如主干道）。
+- **AADT/AAWDT (2014-2020)**: 年度日均/工作日均车流量。
+- **AADT分车型数据**: 摩托车、小汽车、卡车等流量。
+- **Shape__Length0/GIS Shape Length**: 路段GIS长度。
+
+
+### **数据关系理解**
+1. **公交系统与地理网络的关联**  
+   - **Bus_Routes** 与 **Bus_Stops** 通过 `Routes_Ser` 字段关联，可分析路线覆盖与站点客流。
+   - 公交站点坐标（`Y/X`）可与 **nodes_all** 中的节点坐标匹配，确定站点在路网中的位置。
+
+2. **交通路网建模**  
+   - **nodes_all/drive** 和 **edges_all/drive** 构成路网拓扑结构：
+     - **nodes_drive** 可能仅包含车辆通行节点（如排除步行道）。
+     - **edges_drive** 包含车辆相关属性（车道数、限速），支持路径规划算法（如Dijkstra）。
+
+3. **流量数据与路网集成**  
+   - 交通流量表通过 `node start/end` 与 **edges_all** 的 `u/v` 关联，将流量统计映射到具体路段。
+   - 分车型流量（如AADT Truck）可结合 `edges_drive` 的 `highway` 类型（如主干道 vs 支路）分析货运路线。
+
+4. **空间分析**  
+   - 所有表的 `geometry` 字段支持GIS可视化与空间计算（如缓冲区分析站点覆盖范围）。
+   - **Shape__Length** 字段用于计算路线或路段实际长度，辅助交通效率评估。
+
+### **关键注意事项**
+1. **数据完整性**  
+   - `Distributi` 字段标注为内部使用，可能需权限或额外解释。
+   - 流量表中的 `Location Error` 字段全为空，需确认是否为数据缺失。
+
+2. **字段映射**  
+   - **Bus_Stops** 的 `stop_id` 可能与 **nodes_all** 的 `osmid` 需对齐（需验证坐标一致性）。
+   - 交通流量表的 `Route Number` 需与 **Bus_Routes** 的 `Route_Numb` 关联，分析公交对道路流量的影响。
+
+3. **驾驶相关数据分离**  
+   - **nodes_drive** 和 **edges_drive** 需单独处理，可能用于车辆专用分析（如拥堵预测），而 **nodes_all/edges_all** 包含全模式路网。
 
 ```mermaid
 graph TD
-    A[Bus_Routes] --> B[Bus_Stops]
-    A --> C[edges_all]
-    B --> C
-    B --> D[MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore]
+    %% 公交系统模块
+    subgraph 公交系统
+        BR[Bus_Routes] -->|Route_Numb| BS[Bus_Stops]
+        BS -->|Routes_Ser| BR
+        BS -->|Y/X 坐标| NODES_ALL
+        BS -->|stop_id 可能关联| NODES_ALL.osmid
+    end
 
-    A -->|Route_Numb, Routes_Ser| B
-    B -->|Rider_On, Rider_Off, Rider_Tota, Stop_Rider| D
-    B -->|Routes_Ser| A
-    B -->|Y, X| C
-    C -->|u, v| B
-    C -->|osmid| D
-    C -->|length| D
-    D -->|AADT, AAWDT| C
-    A -->|Route_Name, Route_Type| B
-    C -->|osmid| A
-    C -->|highway, lanes, maxspeed, oneway| D
+    %% 地理路网模块
+    subgraph 地理路网
+        NODES_ALL(nodes_all) -->|osmid| EDGES_ALL(edges_all)
+        NODES_DRIVE(nodes_drive) -->|osmid| EDGES_DRIVE(edges_drive)
+        EDGES_ALL -->|u/v 节点| NODES_ALL
+        EDGES_DRIVE -->|u/v 节点| NODES_DRIVE
+    end
 
-    A[Bus_Routes] -->|Route_Name| B[Bus_Stops]
-    A[Bus_Routes] -->|Route_Type| B[Bus_Stops]
-    B[Bus_Stops] -->|Stop_Rider| C[edges_all]
-    D[MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore] -->|AADT| C[edges_all]
+    %% 交通流量模块
+    subgraph 交通流量
+        TRAFFIC[MDOT_SHA_Annual_Traffic] -->|node start/end| EDGES_ALL.u/v
+        TRAFFIC -->|Road Name| BR.Route_Name
+        TRAFFIC -->|Route Number| BR.Route_Numb
+        TRAFFIC -->|highway 类型| EDGES_ALL.highway
+    end
+
+    %% 属性映射
+    classDef table fill:#f9f,stroke:#333;
+    class BR,BS,NODES_ALL,NODES_DRIVE,EDGES_ALL,EDGES_DRIVE,TRAFFIC table;
+
+    %% 关键字段注释
+    linkStyle 0 stroke:#ff3,stroke-width:2px;  %% 公交路线与站点编号关联
+    linkStyle 1 stroke:#0f0,stroke-width:2px;  %% 站点坐标与地理节点匹配
+    linkStyle 4 stroke:#f80,stroke-width:2px;  %% 流量表与路段节点映射
 ```
+
 
 ## P1: 影响性评估
 
