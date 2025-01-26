@@ -16,6 +16,86 @@
 将关键点例如道路交叉口，公交站等地方添加标志。
 Python实际建议考虑使用GeoPandas库，将图设计为networkx使用QGIS进行可视化。
 
+### 数据理解
+
+根据您提供的数据字典，以下是各个数据字段的中文解释和我对数据关系的简要理解：
+
+#### 公交路线相关数据 Bus_Routes
+- **Route_Name**: 公共交通路线的名称，例如公交或轨道路线。
+- **Route_Type**: 路线所代表的公共交通服务类型，如公交车、快线、城市线等。
+- **Route_Numb**: 路线的编号。
+- **Distributi**: 可能指代客流量或交通数据的分布情况，如高峰时段与非高峰时段的对比。
+- **Shape__Length**: 路线的长度，单位为GIS内部使用单位（如米）。
+
+#### 公交站点数据 Bus_Stops
+- **Y**: 站点的纬度坐标，用于地理定位。
+- **X**: 站点的经度坐标，用于地理定位。
+- **stop_name**: 站点的名称，可能包含街道方向信息。
+- **Rider_On**: 在特定时间段内，上车的乘客数量。
+- **Rider_Off**: 在特定时间段内，下车的乘客数量。
+- **Rider_Tota**: 上车与下车乘客的总和。
+- **Stop_Rider**: 站点的总乘客数（可能为Rider_On或Rider_Off的和）。
+- **Routes_Ser**: 服务于该站点的交通路线，如公交、轨道等。
+- **Mode**: 使用的交通方式，如公交、通勤公交等。
+- **Shelter**: 是否有候车棚等设施。
+- **County**: 该站点所在的县名。
+
+#### 路网节点与边数据 nodes_all & nodes_drive
+- **osmid**: 每个节点在OpenStreetMap中的唯一标识符。
+- **y, x**: 节点的纬度与经度坐标。
+- **street_count**: 一个节点与多少条道路相连，表示交叉口数量。
+- **highway**: 道路类型，如住宅区道路、主干道等。
+- **ref**: 道路的参考编号，如高速公路编号。
+- **junction**: 该节点是否为交汇点，及其类型（如环形交叉口）。
+- **geometry**: 节点或路段的空间表示，通常为线段或点。
+  
+#### 路网边数据 edges_all & edges_drive
+- **u, v**: 图中边的起始节点和终止节点的OSM ID。
+- **key**: 区分两个相同节点之间不同道路的唯一标识符。
+- **osmid**: 路段的唯一标识符。
+- **bridge**: 是否为桥梁。
+- **lanes**: 路段的车道数。
+- **maxspeed**: 路段的最大限速。
+- **oneway**: 是否为单行道。
+- **length**: 路段的长度，单位通常为米。
+- **tunnel**: 是否为隧道。
+  
+#### 交通流量相关数据 MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore
+- **AADT (Annual Average Daily Traffic)**: 年度平均日交通量，表示某地点每天的平均交通量。
+- **AAWDT (Annual Average Weekday Traffic)**: 年度平均工作日交通量，表示工作日的平均交通量。
+- **Traffic Count Details**: 各年份的AADT、AAWDT等具体流量数据。
+
+### 数据关系的理解
+- **公交路线与公交站点**: 每个公交路线都有多个停靠的站点，每个站点服务不同的公交路线，可以通过“Routes_Ser”字段链接公交站点与其服务的公交路线。
+- **站点乘客数据**: 通过“Rider_On”和“Rider_Off”字段，可以分析每个站点在特定时段的上下车人数，进而反映该站点的客流密度和出行模式。
+- **路网与交通流量**: 每个道路节点（如“osmid”）与道路边（如“u, v”）构成了一个图模型，代表了路网的结构。节点连接的道路决定了交通流向和可能的瓶颈。而交通流量数据（如AADT）可以帮助评估路段的交通压力和优化方向。
+- **高峰流量分析**: 交通流量数据（如“Peak Hour Direction”）可以用于分析不同时间段的流量变化，为交通网络优化提供依据。
+
+```mermaid
+graph TD
+    A[Bus_Routes] --> B[Bus_Stops]
+    A --> C[edges_all]
+    B --> C
+    B --> D[MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore]
+
+    A -->|Route_Numb, Routes_Ser| B
+    B -->|Rider_On, Rider_Off, Rider_Tota, Stop_Rider| D
+    B -->|Routes_Ser| A
+    B -->|Y, X| C
+    C -->|u, v| B
+    C -->|osmid| D
+    C -->|length| D
+    D -->|AADT, AAWDT| C
+    A -->|Route_Name, Route_Type| B
+    C -->|osmid| A
+    C -->|highway, lanes, maxspeed, oneway| D
+
+    A[Bus_Routes] -->|Route_Name| B[Bus_Stops]
+    A[Bus_Routes] -->|Route_Type| B[Bus_Stops]
+    B[Bus_Stops] -->|Stop_Rider| C[edges_all]
+    D[MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore] -->|AADT| C[edges_all]
+```
+
 ## P1: 影响性评估
 
 通过网络模型评估大桥倒塌或重建对交通系统和利益相关者的影响。

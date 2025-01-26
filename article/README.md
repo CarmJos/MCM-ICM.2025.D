@@ -1,1 +1,0 @@
-# The solution article of MCM/ICM 2025 Problem D
