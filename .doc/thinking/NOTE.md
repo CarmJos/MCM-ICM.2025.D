@@ -99,7 +99,6 @@ Python实际建议考虑使用GeoPandas库，将图设计为networkx使用QGIS�
 
 ```mermaid
 graph TD
-    %% 公交系统模块
     subgraph 公交系统
         BR[Bus_Routes] -->|Route_Numb| BS[Bus_Stops]
         BS -->|Routes_Ser| BR
@@ -107,7 +106,6 @@ graph TD
         BS -->|stop_id 可能关联| NODES_ALL.osmid
     end
 
-    %% 地理路网模块
     subgraph 地理路网
         NODES_ALL(nodes_all) -->|osmid| EDGES_ALL(edges_all)
         NODES_DRIVE(nodes_drive) -->|osmid| EDGES_DRIVE(edges_drive)
@@ -115,7 +113,6 @@ graph TD
         EDGES_DRIVE -->|u/v 节点| NODES_DRIVE
     end
 
-    %% 交通流量模块
     subgraph 交通流量
         TRAFFIC[MDOT_SHA_Annual_Traffic] -->|node start/end| EDGES_ALL.u/v
         TRAFFIC -->|Road Name| BR.Route_Name
@@ -123,14 +120,12 @@ graph TD
         TRAFFIC -->|highway 类型| EDGES_ALL.highway
     end
 
-    %% 属性映射
     classDef table fill:#f9f,stroke:#333;
     class BR,BS,NODES_ALL,NODES_DRIVE,EDGES_ALL,EDGES_DRIVE,TRAFFIC table;
 
-    %% 关键字段注释
-    linkStyle 0 stroke:#ff3,stroke-width:2px;  %% 公交路线与站点编号关联
-    linkStyle 1 stroke:#0f0,stroke-width:2px;  %% 站点坐标与地理节点匹配
-    linkStyle 4 stroke:#f80,stroke-width:2px;  %% 流量表与路段节点映射
+    linkStyle 0 stroke:#ff3,stroke-width:2px;
+    linkStyle 1 stroke:#0f0,stroke-width:2px; 
+    linkStyle 4 stroke:#f80,stroke-width:2px; 
 ```
 
 
