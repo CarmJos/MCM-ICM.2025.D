@@ -3,19 +3,15 @@
 <img align="right" height=30% width=30% src=".doc/problem/img.png"  alt="banner"/>
 
 This project is a solution to the 2025 ICM Problem D using [Python]() and [LaTex](), with the following sections:
+
 1. introduction of the problem
-2. the mathematical model, 
+2. the mathematical model,
 3. the algorithm design and implementation.
 
 ## Problem
 
 See the [original](.doc/problem/ORIGINAL.md) or [Chinese Version](.doc/problem/CHINESE.md)
-for problem description and requirements.
-
-## Thinking & Analysis
-
-We were using [NVIDIA RTX 4090D](https://www.nvidia.cn/geforce/graphics-cards/40-series/rtx-4090-d/) _*3_
-GPU to accelerate the computation of the model.
+for problem description and requirements.~~~~
 
 ## Open Source Licence
 
