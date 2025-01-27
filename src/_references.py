@@ -2,13 +2,13 @@ from dataclasses import dataclass
 
 ONLY_DRIVES = True
 
-DATA_FOLDER = '../data/'
+SOURCE_DATA_FOLDER = '../data/source/'
 
-ROUTES_FILE = DATA_FOLDER + 'Bus_Routes.csv'
-STOPS_FILE = DATA_FOLDER + 'Bus_Stops.csv'
-NODES_FILE = DATA_FOLDER + ('nodes_all.csv' if not ONLY_DRIVES else 'nodes_drive.csv')
-EDGES_FILE = DATA_FOLDER + ('edges_all.csv' if not ONLY_DRIVES else 'edges_drive.csv')
-TRAFFIC_DATA_FILE = DATA_FOLDER + 'MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore.csv'
+ROUTES_FILE = SOURCE_DATA_FOLDER + 'Bus_Routes.csv'
+STOPS_FILE = SOURCE_DATA_FOLDER + 'Bus_Stops.csv'
+NODES_FILE = SOURCE_DATA_FOLDER + ('nodes_all.csv' if not ONLY_DRIVES else 'nodes_drive.csv')
+EDGES_FILE = SOURCE_DATA_FOLDER + ('edges_all.csv' if not ONLY_DRIVES else 'edges_drive.csv')
+TRAFFIC_DATA_FILE = SOURCE_DATA_FOLDER + 'MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore.csv'
 
 BUS_ROUTE_TYPE_MAPPER = {
     'BR': 'CityLink BROWN', 'BL': 'CityLink BLUE', 'GL': 'CityLink GOLD',

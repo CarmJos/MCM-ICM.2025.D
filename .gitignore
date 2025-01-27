@@ -1,6 +1,4 @@
 .venv/
-target/
-
 *.iws
 .idea_modules/
 .idea/

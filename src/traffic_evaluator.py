@@ -109,27 +109,18 @@ class NetworkEvaluator:
         sim_best = weighted_matrix.apply(lambda row: cosine_sim(row, ideal_best), axis=1)
         sim_worst = weighted_matrix.apply(lambda row: cosine_sim(row, ideal_worst), axis=1)
 
-        # 检查是否有 NaN 或 inf
-        if sim_best.isnull().any() or sim_worst.isnull().any():
-            print("警告：余弦相似度计算出现 NaN，请检查数据。")
-            sim_best = sim_best.fillna(0)
-            sim_worst = sim_worst.fillna(0)
-
         # 计算贴近度
         closeness = sim_best / (sim_best + sim_worst)
         return closeness.sort_values(ascending=False)
 
-    def full_evaluation(self, supplier: Callable[[Traffic], float] = None,
-                        weights: Dict[str, float] = None) -> pd.DataFrame:
+    def full_evaluation(self, weights: Dict[str, float] = None) -> pd.DataFrame:
 
         self.calculate_degree_centrality()
         self.calculate_betweenness_centrality()
         self.calculate_closeness_centrality()
         self.calculate_eigenvector_centrality()
         self.calculate_pagerank()
-        self.calculate_connection_strength(supplier)
 
-        # TOPSIS评估
         print("Performing TOPSIS evaluation...")
         topsis_result = self.cosine_topsis(weights)
 
@@ -144,3 +135,23 @@ class NetworkEvaluator:
         })
 
         return result_df.sort_values('score', ascending=False)
+
+
+def evaluate(dataset: Dataset) -> pd.DataFrame:
+    # 创建评估模型
+    evaluator = NetworkEvaluator(dataset)
+    print("-----------------------------------------------")
+
+    # 执行评估
+    result = evaluator.full_evaluation({
+        'degree_centrality': 0.4,
+        'betweenness_centrality': 0.4,
+        'closeness_centrality': 0.3,
+        'eigenvector_centrality': 0.3,
+        'pagerank': 0.3
+    })
+
+    print("\nTop 10 important nodes:")
+    print(result.head(10))
+
+    return result
