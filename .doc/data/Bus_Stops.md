@@ -1,0 +1,46 @@
+# Bus_Stops
+
+
+## Dictionary
+| **key**        | **desc**                                                                                                                                                                    | **example**                                                                            |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| **stop_id**    | A unique identifier assigned to each transit stop in the system, allowing it to be distinctively referenced in datasets.                                                    | Numeric value, not values are used.                                                    |
+| **stop_name**  | The name or label of a particular transit stop or station. It may also indicate the side of the street and the direction of the transit vehicle.                            | "CYLBURN AVE & GREENSPRING AVE fs wb"                                                  |
+| **Y**          | The latitude coordinate of a point (node) in the OSM dataset. Used for geographic positioning.                                                                              | A numeric value between 39.2 and 39.4                                                  |
+| **X**          | The longitude coordinate of a point (node) in the OSM dataset. Also used for geographic positioning.                                                                        | A numeric value between -76.8 and -76.5                                                |
+| **Routes_Ser** | The identifier or description of the routes served by a specific transit stop.                                                                                              | This could list the bus, light rail, or metro routes that have stops at that location. |
+| Rider_On       | The number of passengers who boarded the transit vehicle at a given stop within a specified time period.                                                                    | Numeric values                                                                         |
+| Rider_Off      | The number of passengers who exited the transit vehicle at a given stop within a specified time period.                                                                     | Numeric values                                                                         |
+| Rider_Total    | The total number of passengers either boarding or exiting at a specific transit stop (usually a sum of Rider_On and Rider_Off).                                             | Numeric values                                                                         |
+| Stop_Rider     | The total number of riders at a stop, potentially referring to either the total Rider_On or Rider_Off counts, or a combination, for that particular stop.                   | Numeric values                                                                         |
+| Mode           | Refers to the mode of transportation being used.                                                                                                                            | "Bus" or "Commuter Bus" or a combination of the two.                                   |
+| Shelter        | Indicates whether the transit stop has a shelter or other weather protection for passengers.                                                                                | "yes" or "no"                                                                          |
+| County         | The name or code of the county where the transit stop is located. This is especially relevant in metropolitan areas with transit routes crossing county lines.              | "Baltimore City" or "Baltimore County"                                                 |
+| ~~Distributi~~ | Likely refers to the distribution of ridership data, possibly showing patterns such as time-of-day distributions, peak hours, or ridership across different days or routes. | All labeled with "E1 - Public Domain - Internal Use Only"                              |
+
+
+## Example
+
+| Y         | X          | stop_name                              | Rider_On | Rider_Off | Rider_Tota | Stop_Rider | Routes_Ser  | Distributi                             | Mode | Shelter | County         | stop_id |
+|-----------|------------|----------------------------------------|----------|-----------|------------|------------|-------------|----------------------------------------|------|---------|----------------|---------|
+| 39.350945 | -76.660393 | CYLBURN AVE & GREENSPRING AVE fs wb    | 201      | 167       | 368        | 250        | 94,31,31,91 | E1 - Public Domain - Internal Use Only | Bus  | Yes     | Baltimore City | 1       |
+| 39.351545 | -76.663359 | LANIER AVE & SINAI HOSPITAL sb         | 38       | 24        | 62         | 1727       | 94,31,91    | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 3       |
+| 39.352749 | -76.664492 | LANIER AVE & BELVEDERE AVE nb          | 147      | 45        | 192        | 594        | 94,31,91    | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 4       |
+| 39.346756 | -76.658233 | YELLOWOOD AVE & FLAX TERR OPP sb       | 51       | 61        | 113        | 1068       | 91,91       | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 8       |
+| 39.348262 | -76.654797 | TAMARIND RD & SPRINGARDEN DR nb        | 19       | 23        | 43         | 2161       | 91,91       | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 10      |
+| 39.348887 | -76.659363 | GREENSPRING AVE & OAKLEY AVE fs sb     | 8        | 10        | 19         | 3049       | 91          | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 11      |
+| 39.34615  | -76.659645 | GREENSPRING AVE & WOODLAND AVE fs sb   | 48       | 14        | 61         | 1740       | 91          | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 12      |
+| 39.344454 | -76.659011 | GREENSPRING AVE & DUPONT AVE sb        | 61       | 30        | 91         | 1279       | 91          | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 15      |
+| 39.34044  | -76.658224 | GREENSPRING AVE & COLD SPRING LN fs sb | 6        | 2         | 9          | 3612       | 91,38       | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 16      |
+| 39.338993 | -76.657787 | GREENSPRING AVE & LOYOLA SOUTHWAY sb   | 5        | 3         | 8          | 3646       | 38          | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 17      |
+| 39.337873 | -76.656678 | GREENSPRING AVE & OSWEGO AVE sb        | 16       | 11        | 27         | 2653       | 91,38       | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 18      |
+| 39.336248 | -76.656389 | GREENSPRING AVE & SHIRLEY AVE fs sb    | 19       | 9         | 28         | 2626       | 91,38       | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 19      |
+| 39.330559 | -76.654241 | GREENSPRING AVE & DRUID PARK DR sb     | 4        | 5         | 9          | 3580       | 91,38       | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 21      |
+| 39.328889 | -76.655886 | DRUID PARK DR & HILLDALE PL wb         | 10       | 7         | 17         | 3115       | 91,22,38    | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 22      |
+| 39.324981 | -76.657527 | REISTERSTOWN RD & DRUID PARK DR fs sb  | 139      | 127       | 266        | 390        | 91,83,85    | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 23      |
+| 39.322682 | -76.655801 | REISTERSTOWN RD & WICHITA AVE sb       | 8        | 17        | 26         | 2718       | 91,83,85    | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 24      |
+| 39.321251 | -76.654724 | REISTERSTOWN RD & OCALA AVE mb sb      | 19       | 18        | 37         | 2328       | 91,83,85    | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 25      |
+| 39.314786 | -76.64833  | REISTERSTOWN RD & ELGIN AVE sb         | 97       | 82        | 178        | 648        | NV,85,LM    | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 31      |
+| 39.313782 | -76.647158 | REISTERSTOWN RD & WINDSOR AVE sb       | 7        | 26        | 33         | 2440       | LM          | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 32      |
+| 39.312102 | -76.646698 | FULTON AVE & CLIFTON AVE sb            | 52       | 19        | 71         | 1551       | NV          | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 35      |
+| 39.310126 | -76.646581 | FULTON AVE & NORTH AVE sb              | 104      | 34        | 138        | 864        | NV          | E1 - Public Domain - Internal Use Only | Bus  | No      | Baltimore City | 36      |

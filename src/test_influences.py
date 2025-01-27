@@ -3,13 +3,14 @@ import networkx as nx
 from _references import *
 
 # 读取节点数据，包含节点ID、纬度和经度
-nodes_df = pd.read_csv(NODES_FILE, usecols=[0, 1, 2], header=None, names=['node_id', 'latitude', 'longitude'], skiprows=1)
+nodes_df = pd.read_csv(NODES_FILE, usecols=[0, 1, 2], header=None, names=['node_id', 'latitude', 'longitude'],
+                       skiprows=1)
 
 # 筛选符合条件的节点
 nodes_df = nodes_df[
     (nodes_df['latitude'] >= 39.18) & (nodes_df['latitude'] <= 39.33) &
     (nodes_df['longitude'] >= -76.71) & (nodes_df['longitude'] <= -76.45)
-]
+    ]
 
 # 读取边数据
 edges_df = pd.read_csv(NAMES_FILE, header=None, names=['street_name', 'nodes'], skiprows=1)
