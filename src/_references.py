@@ -1,9 +1,10 @@
 from dataclasses import dataclass
 
-ONLY_DRIVES = True
+ONLY_DRIVES = False
 
 SOURCE_DATA_FOLDER = '../data/source/'
 
+NAMES_FILE = SOURCE_DATA_FOLDER + 'Edge_Names_With_Nodes.csv'
 ROUTES_FILE = SOURCE_DATA_FOLDER + 'Bus_Routes.csv'
 STOPS_FILE = SOURCE_DATA_FOLDER + 'Bus_Stops.csv'
 NODES_FILE = SOURCE_DATA_FOLDER + ('nodes_all.csv' if not ONLY_DRIVES else 'nodes_drive.csv')

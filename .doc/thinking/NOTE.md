@@ -1,6 +1,6 @@
 # [任务](../problem/CHINESE.md#任务需求)内容分析
 
-![MAP](../res/CITY_MAP.png)
+![MAP](../CITY_MAP.png)
 
 ## P0: 构建交通网络模型
 

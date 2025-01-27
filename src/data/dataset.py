@@ -13,10 +13,13 @@ from data import *
 
 def read_geo(
         file_path: str, index_columns: Union[str, List[str]] = None,
+        value_filter: Callable[[pd.DataFrame], bool] = None,
         converter: Callable[[pd.DataFrame], Any] = None
 ) -> GeoDataFrame:
     index_columns = index_columns if isinstance(index_columns, list) else [index_columns]
     df = pd.read_csv(file_path, index_col=index_columns, low_memory=False)
+    if value_filter is not None:
+        df = df[value_filter(df)]
     return gpd.GeoDataFrame(df, geometry=converter(df))
 
 
@@ -36,15 +39,20 @@ class Dataset:
         self._table_traffic = pd.read_csv(TRAFFIC_DATA_FILE, index_col='GlobalID', low_memory=False)
         self._table_nodes = read_geo(
             NODES_FILE, 'osmid',
+            (lambda data: (data['y'] >= 39.18) & (data['y'] <= 39.33) &
+                          (data['x'] >= -76.71) & (data['x'] <= -76.45)),
             (lambda data: gpd.GeoSeries.from_wkt(data['geometry']))
         )
         self._table_edges = read_geo(
             EDGES_FILE, ['u', 'v', 'key'],
-            (lambda data: gpd.GeoSeries.from_wkt(data['geometry']))
+            (lambda data: (data.index.get_level_values(0).isin(self._table_nodes.index)) &
+                          (data.index.get_level_values(1).isin(self._table_nodes.index))),
+            converter=(lambda data: gpd.GeoSeries.from_wkt(data['geometry']))
         )
+
         self._table_bus_stops = read_geo(
             STOPS_FILE, 'stop_id',
-            (lambda data: [Point(xy) for xy in zip(data['X'], data['Y'])])
+            converter=(lambda data: [Point(xy) for xy in zip(data['X'], data['Y'])])
         )
         self._table_bus_routes = pd.read_csv(ROUTES_FILE, index_col='Route_Numb', low_memory=False)
 
@@ -293,22 +301,6 @@ class Traffic:
         return self._data.get('Station ID')
 
     @property
-    def county_code(self) -> Optional[int]:
-        return safe_int(self._data.get('County Code'))
-
-    @property
-    def county_name(self) -> Optional[str]:
-        return self._data.get('County Name')
-
-    @property
-    def municipal_code(self) -> Optional[int]:
-        return safe_int(self._data.get('Municipal Code'))
-
-    @property
-    def municipality_name(self) -> Optional[str]:
-        return self._data.get('Municipality Name')
-
-    @property
     def road_name(self) -> Optional[str]:
         return self._data.get('Road Name')
 
@@ -319,8 +311,6 @@ class Traffic:
     @property
     def route_number(self) -> Optional[str]:
         return self._data.get('Route Number')
-
-    # ...（其他属性按相同模式实现，仅展示关键差异部分）
 
     @property
     def k_factor(self) -> Optional[float]:
@@ -333,12 +323,12 @@ class Traffic:
     # ------------------ Temporal Data Accessors ------------------
     def aadt(self, year: int) -> Optional[float]:
         """处理混合数据类型（如示例中的空单元格）"""
-        if year == 2023:
+        if year >= 2023:
             return safe_float(self._data.get('AADT (Current)'))
         return safe_float(self._data.get(f"AADT {year}"))
 
     def aawdt(self, year: int) -> Optional[float]:
-        if year == 2023:
+        if year >= 2023:
             return safe_float(self._data.get('AAWDT (Current)'))
         return safe_float(self._data.get(f"AAWDT {year}"))
 

@@ -21,7 +21,7 @@
 甚至土壤的构成和天气条件也可能成为干扰因素。
 
 ## 情景描述
-<img align="right" height=45% width=45% src="../res/CITY_MAP.png"  alt="banner"/>
+<img align="right" height=45% width=45% src="../CITY_MAP.png"  alt="banner"/>
 
 **美国马里兰州** 的 **Baltimore** 市正面临着基础设施老化和交通选择有限的问题，而这些问题影响着市民的生活，并妨碍了其经济增长。
 此外，近期其主要的一座桥梁（弗朗西斯·斯科特·基桥）发生倒塌，切断了通往繁忙港口的主要高速公路。
