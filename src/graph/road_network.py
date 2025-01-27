@@ -1,5 +1,4 @@
 from matplotlib import pyplot as plt
-
 from data.dataset import Dataset
 
 

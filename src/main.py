@@ -17,9 +17,11 @@ if __name__ == '__main__':
 
     # 创建评估模型
     evaluator = NetworkEvaluator(dataset)
+    print("-----------------------------------------------")
+    sleep(1)
 
     # 执行评估
-    result = evaluator.full_evaluation(weights={
+    result = evaluator.full_evaluation((lambda t: t.aadt(2022)), {
         'degree_centrality': 0.2,
         'betweenness_centrality': 0.2,
         'closeness_centrality': 0.15,
@@ -30,3 +32,6 @@ if __name__ == '__main__':
 
     print("\nTop 10 important nodes:")
     print(result.head(10))
+
+    # save result to csv
+    result.to_csv('../target/result.csv', index=False)

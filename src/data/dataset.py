@@ -1,18 +1,23 @@
 import sys
-from tkinter.font import names
-
-import geopandas as gpd
 from typing import List, Dict, Any, Callable, Union, Tuple
 
-import pandas as pd
-from geopandas import GeoDataFrame, GeoSeries
+import geopandas as gpd
+from geopandas import GeoDataFrame
 from pandas import DataFrame
-from shapely.geometry.linestring import LineString
 from shapely.geometry.point import Point
 from tqdm import tqdm
 
 from _references import *
 from data import *
+
+
+def read_geo(
+        file_path: str, index_columns: Union[str, List[str]] = None,
+        converter: Callable[[pd.DataFrame], Any] = None
+) -> GeoDataFrame:
+    index_columns = index_columns if isinstance(index_columns, list) else [index_columns]
+    df = pd.read_csv(file_path, index_col=index_columns, low_memory=False)
+    return gpd.GeoDataFrame(df, geometry=converter(df))
 
 
 def load(
@@ -23,15 +28,6 @@ def load(
     for idx, row in tqdm(df.iterrows(), total=df.shape[0], desc=desc):
         table[idx] = converter(row)
     return table
-
-
-def read_geo(
-        file_path: str, index_columns: Union[str, List[str]] = None,
-        converter: Callable[[pd.DataFrame], Any] = None
-) -> GeoDataFrame:
-    index_columns = index_columns if isinstance(index_columns, list) else [index_columns]
-    df = pd.read_csv(file_path, index_col=index_columns, low_memory=False)
-    return gpd.GeoDataFrame(df, geometry=converter(df))
 
 
 class Dataset:
@@ -159,11 +155,6 @@ class Node:
     def edges(self) -> List['Edge']:
         """Get all edges connected to this node."""
         return [edge for edge in self._parent.edges if edge.node_u == self or edge.node_v == self]
-
-    @property
-    def coordinates(self) -> Coordinates:
-        """Get (longitude, latitude) point."""
-        return Coordinates(self._data['x'], self._data['y'])
 
     @property
     def point(self) -> Point:
@@ -339,37 +330,30 @@ class Traffic:
     def d_factor(self) -> Optional[float]:
         return safe_float(self._data.get('D-Factor'))
 
-    @property
-    def aadt_motorcycle(self) -> Optional[float]:
-        return safe_float(self._data.get('AADT Motorcycle'))
-
-    @property
-    def aadt_bus(self) -> Optional[float]:
-        return safe_float(self._data.get('AADT Bus'))
-
     # ------------------ Temporal Data Accessors ------------------
-    def get_aadt(self, year: int) -> Optional[float]:
+    def aadt(self, year: int) -> Optional[float]:
         """处理混合数据类型（如示例中的空单元格）"""
         if year == 2023:
             return safe_float(self._data.get('AADT (Current)'))
         return safe_float(self._data.get(f"AADT {year}"))
 
-    def get_aawdt(self, year: int) -> Optional[float]:
+    def aawdt(self, year: int) -> Optional[float]:
         if year == 2023:
             return safe_float(self._data.get('AAWDT (Current)'))
         return safe_float(self._data.get(f"AAWDT {year}"))
 
     # ------------------ Vehicle-Type Data Accessors ------------------
-    def get_vehicle_aadt(self, vehicle_type: str) -> Optional[float]:
+    def aadt_vehicle(self, vehicle_type: str) -> Optional[float]:
         """处理空值（如示例中某些车型数据为空白）"""
         return safe_float(self._data.get(f"AADT {vehicle_type}"))
 
-    # ------------------ Spatial Properties ------------------
     @property
-    def coordinates(self) -> Optional[Coordinates]:
-        """处理空节点列表情况"""
-        if not self.node_start: return None
-        return self._parent.node(self.node_start[0]).coordinates if self.node_start else None
+    def aadt_motorcycle(self) -> Optional[float]:
+        return self.aadt_vehicle('Motorcycle')
+
+    @property
+    def aadt_bus(self) -> Optional[float]:
+        return self.aadt_vehicle('Bus')
 
 
 class BusRoute:
@@ -440,7 +424,7 @@ class BusStop:
     def routes(self) -> List[BusRoute]:
         """Get all routes passing through this stop."""
         if not hasattr(self, '_routes'):
-            self._routes = [route for route in self._parent.bus_routes if self.serving(route)]
+            self._routes = [route for route in self._parent.bus_routes() if self.serving(route)]
         return self._routes
 
     @property

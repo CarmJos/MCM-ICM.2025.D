@@ -16,13 +16,3 @@ BUS_ROUTE_TYPE_MAPPER = {
     'PR': 'CityLink PURPLE', 'RD': 'CityLink RED', 'SV': 'CityLink SILVER',
     'YW': 'CityLink YELLOW', 'NV': 'CityLink NAVY'
 }
-
-
-@dataclass
-class Coordinates:
-    longitude: float
-    latitude: float
-
-    def distance(self, other: 'Coordinates') -> float:
-        """Calculate the distance between two coordinates."""
-        return ((self.longitude - other.longitude) ** 2 + (self.latitude - other.latitude) ** 2) ** 0.5
