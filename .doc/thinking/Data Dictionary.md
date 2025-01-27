@@ -213,4 +213,16 @@
   *Example*: Numeric value.
 - **AAWDT 2019**: The AAWDT for the year 2019.  
   *Example*: Numeric value.
-- **AADT 2020**: The AADT
+- **AADT 2020**: The AADT for the year 2020.  
+  *Example*: Numeric value.
+- **AAWDT 2020**: The AAWDT for the year 2020.  
+  *Example*: Numeric value.
+- **AADT 2021**: The AADT for the year 2021.  
+  *Example*: Numeric value.
+- **AAWDT 2021**: The AAWDT for the year 2021.  
+  *Example*: Numeric value.
+- **AADT 2022**: The AADT for the year 2022.  
+  *Example*: Numeric value.
+- **AAWDT 2022**: The AAWDT for the year 2022.  
+  *Example*: Numeric value.
+- **GlobalID**: A unique identifier.
