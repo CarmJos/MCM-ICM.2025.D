@@ -11,7 +11,7 @@ This project is a solution to the 2025 ICM Problem D using [Python]() and [LaTex
 ## Problem
 
 See the [original](.doc/problem/ORIGINAL.md) or [Chinese Version](.doc/problem/CHINESE.md)
-for problem description and requirements.~~~~
+for problem description and requirements.
 
 ## Open Source Licence
 
