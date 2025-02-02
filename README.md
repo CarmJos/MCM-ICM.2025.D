@@ -15,27 +15,23 @@ for problem description and requirements.
 
 ## Graphical Model
 
-We have created some graphical models for the problem:
+We have created some graphical models for the problem, see [GitHub Pages](https://carmjos.github.io/MCM-ICM.2025.D/).
 
-- [Important Nodes](https://carmjos.github.io/MCM-ICM.2025.D/important_nodes.html)
-- [Traffic AADT 2014](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2014.html)
-- [Traffic AADT 2015](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2015.html)
-- [Traffic AADT 2016](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2016.html)
-- [Traffic AADT 2017](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2017.html)
-- [Traffic AADT 2018](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2018.html)
-- [Traffic AADT 2019](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2019.html)
-- [Traffic AADT 2020](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2020.html)
-- [Traffic AADT 2021](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2021.html)
-- [Traffic AADT Current](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/current.html)
-- [Traffic AAWDT 2014](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2014.html)
-- [Traffic AAWDT 2015](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2015.html)
-- [Traffic AAWDT 2016](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2016.html)
-- [Traffic AAWDT 2017](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2017.html)
-- [Traffic AAWDT 2018](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2018.html)
-- [Traffic AAWDT 2019](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2019.html)
-- [Traffic AAWDT 2020](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2020.html)
-- [Traffic AAWDT 2021](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2021.html)
-- [Traffic AAWDT Current](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/current.html)
+|    **Model**    |                               **Link**                                | **Description**                            |            
+|:---------------:|:---------------------------------------------------------------------:|--------------------------------------------|
+| Important Nodes | [Jump](https://carmjos.github.io/MCM-ICM.2025.D/important_nodes.html) | Important nodes (by TOPSIS) in the network |
+
+| **Year** |                                  **AADT**                                  |                                  **AAWDT**                                  |
+|:--------:|:--------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|
+|   2014   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2014.html)   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aawdt/2014.html)   |
+|   2015   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2015.html)   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aawdt/2015.html)   |
+|   2016   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2016.html)   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aawdt/2016.html)   |
+|   2017   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2017.html)   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aawdt/2017.html)   |
+|   2018   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2018.html)   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aawdt/2018.html)   |
+|   2019   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2019.html)   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aawdt/2019.html)   |
+|   2020   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2020.html)   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aawdt/2020.html)   |
+|   2021   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2021.html)   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aawdt/2021.html)   |
+| Current  | [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/current.html) | [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aawdt/current.html) |
 
 ## Issues
 
@@ -47,11 +43,11 @@ or email me at [carm@carm.cc](mailto:carm@carm.cc).
 
 The source code of this project adopts the [GNU General Public License v3.0](https://opensource.org/licenses/GPL-3.0).
 
-## Supports
+## Acknowledgements
 
 Many thanks to **our advisor (Mr. Han)** for his well guidance and tremendous support.
 
-Many thanks to **our team members ( @WangGold3, @hanghangz628 )** for their hard work and dedication.
+Many thanks to **our team members (@CarmJos, @WangGold3, @hanghangz628)** for their hard work and dedication.
 
 Many thanks to **Jetbrains** for kindly providing a license for us to work on this and other open-source projects.  
 ![](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)
