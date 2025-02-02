@@ -17,11 +17,11 @@ for problem description and requirements.
 
 We have created some graphical models for the problem, see [GitHub Pages](https://carmjos.github.io/MCM-ICM.2025.D/).
 
-|    **Model**    |                               **Link**                                | **Description**                            |            
+|    **Type**     |                               **Link**                                | **Description**                            |            
 |:---------------:|:---------------------------------------------------------------------:|--------------------------------------------|
 | Important Nodes | [Jump](https://carmjos.github.io/MCM-ICM.2025.D/important_nodes.html) | Important nodes (by TOPSIS) in the network |
 
-| **Year** |                                  **AADT**                                  |                                  **AAWDT**                                  |
+| **Year** |                 **Annual Average Daily Traffic** _(AADT)_                  |             **Annual Average Workday Daily Traffic** _(AAWDT)_              |
 |:--------:|:--------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|
 |   2014   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2014.html)   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aawdt/2014.html)   |
 |   2015   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2015.html)   |  [Jump](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aawdt/2015.html)   |
@@ -48,6 +48,8 @@ The source code of this project adopts the [GNU General Public License v3.0](htt
 Many thanks to **our advisor (Mr. Han)** for his well guidance and tremendous support.
 
 Many thanks to **our team members (@CarmJos, @WangGold3, @hanghangz628)** for their hard work and dedication.
+
+![Jiangsu University](.doc/school-logo.png)
 
 Many thanks to **Jetbrains** for kindly providing a license for us to work on this and other open-source projects.  
 ![](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)
