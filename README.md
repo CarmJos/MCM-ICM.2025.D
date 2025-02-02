@@ -37,13 +37,21 @@ We have created some graphical models for the problem:
 - [Traffic AAWDT 2021](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2021.html)
 - [Traffic AAWDT Current](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/current.html)
 
+## Issues
+
+If you have any questions or suggestions, 
+please [open an issue](https://github.com/CarmJos/CarmJos/issues/new?template=Blank+issue)
+or email me at [carm@carm.cc](mailto:carm@carm.cc).
+
 ## Open Source Licence
 
 The source code of this project adopts the [GNU General Public License v3.0](https://opensource.org/licenses/GPL-3.0).
 
 ## Supports
 
-Many thanks to **our advisor (Mr. Han)** for his well guidance and support.
+Many thanks to **our advisor (Mr. Han)** for his well guidance and tremendous support.
+
+Many thanks to **our team members ( @WangGold3, @hanghangz628 )** for their hard work and dedication.
 
 Many thanks to **Jetbrains** for kindly providing a license for us to work on this and other open-source projects.  
 ![](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)
