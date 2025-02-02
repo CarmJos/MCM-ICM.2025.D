@@ -13,6 +13,30 @@ This project is a solution to the 2025 ICM Problem D using [Python]() and [LaTex
 See the [original](.doc/problem/ORIGINAL.md) or [Chinese Version](.doc/problem/CHINESE.md)
 for problem description and requirements.
 
+## Graphical Model
+
+We have created some graphical models for the problem:
+
+- [Important Nodes](https://carmjos.github.io/MCM-ICM.2025.D/important_nodes.html)
+- [Traffic AADT 2014](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2014.html)
+- [Traffic AADT 2015](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2015.html)
+- [Traffic AADT 2016](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2016.html)
+- [Traffic AADT 2017](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2017.html)
+- [Traffic AADT 2018](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2018.html)
+- [Traffic AADT 2019](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2019.html)
+- [Traffic AADT 2020](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2020.html)
+- [Traffic AADT 2021](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2021.html)
+- [Traffic AADT Current](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/current.html)
+- [Traffic AAWDT 2014](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2014.html)
+- [Traffic AAWDT 2015](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2015.html)
+- [Traffic AAWDT 2016](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2016.html)
+- [Traffic AAWDT 2017](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2017.html)
+- [Traffic AAWDT 2018](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2018.html)
+- [Traffic AAWDT 2019](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2019.html)
+- [Traffic AAWDT 2020](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2020.html)
+- [Traffic AAWDT 2021](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/2021.html)
+- [Traffic AAWDT Current](https://carmjos.github.io/MCM-ICM.2025.D/traffic/aadt/current.html)
+
 ## Open Source Licence
 
 The source code of this project adopts the [GNU General Public License v3.0](https://opensource.org/licenses/GPL-3.0).
