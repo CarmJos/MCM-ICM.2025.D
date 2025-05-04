@@ -8,9 +8,6 @@ This project is a solution to the 2025 ICM Problem D using [Python]() and [LaTex
 2. the mathematical model,
 3. the algorithm design and implementation.
 
-We was designated as **Meritorious Winner** _(also known as First Prize)_ in this contest.
-
-![Cert](.doc/result.png)
 
 ## Problem
 
@@ -48,6 +45,11 @@ or email me at [carm@carm.cc](mailto:carm@carm.cc).
 The source code of this project adopts the [GNU General Public License v3.0](https://opensource.org/licenses/GPL-3.0).
 
 ## Acknowledgements
+
+
+We was designated as **Meritorious Winner** _(also known as First Prize)_ in this contest.
+
+<img align="right" height=30% width=30% src=".doc/result.png"  alt="cert"/>
 
 Many thanks to **our advisor (Mr. Han)** for his well guidance and tremendous support.
 
