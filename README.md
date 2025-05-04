@@ -46,10 +46,9 @@ The source code of this project adopts the [GNU General Public License v3.0](htt
 
 ## Acknowledgements
 
+<img align="right" height=30% width=30% src=".doc/result.png"  alt="cert"/>
 
 We was designated as **Meritorious Winner** _(also known as First Prize)_ in this contest.
-
-<img align="right" height=30% width=30% src=".doc/result.png"  alt="cert"/>
 
 Many thanks to **our advisor (Mr. Han)** for his well guidance and tremendous support.
 
