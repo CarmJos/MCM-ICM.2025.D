@@ -8,6 +8,10 @@ This project is a solution to the 2025 ICM Problem D using [Python]() and [LaTex
 2. the mathematical model,
 3. the algorithm design and implementation.
 
+We was designated as **Meritorious Winner** _(also known as First Prize)_ in this contest.
+
+![Cert](.doc/result.png)
+
 ## Problem
 
 See the [original](.doc/problem/ORIGINAL.md) or [Chinese Version](.doc/problem/CHINESE.md)
